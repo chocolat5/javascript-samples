@@ -230,11 +230,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: center; /*IE*/
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .card {
@@ -248,8 +248,11 @@ body {
 .back {
   height: 90px;
   width: 90px;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
   transition: all .5s ease;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .front,
@@ -259,7 +262,8 @@ body {
   left: 0;
   background-color: #fff;
   border-radius: 16px;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .front {
@@ -268,18 +272,21 @@ body {
 }
 
 .back {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 .selected {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .match {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .message {
@@ -341,3 +348,5 @@ body {
     max-width: 880px;
   }
 }
+
+/*# sourceMappingURL=style.css.map*/

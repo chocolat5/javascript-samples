@@ -52,28 +52,67 @@ game.appendChild(grid);
 // Duplicate array
 let gameGrid = cardsArray.concat(cardsArray);
 
-// Randomize game grid on each load
-gameGrid.sort(() => 0.5 - Math.random());
+const createGrid = () => {
+  // Randomize game grid on each load
+  gameGrid.sort(() => 0.5 - Math.random());
 
-gameGrid.map(card => {
-  //create card element
-  const item = document.createElement('div');
-  item.classList.add('card');
-  item.dataset.name = card.name;
+  gameGrid.map(card => {
+    //create card element
+    const item = document.createElement('div');
+    item.classList.add('card');
+    item.dataset.name = card.name;
 
-  //create front of card
-  const front = document.createElement('div');
-  front.classList.add('front');
+    //create front of card
+    const front = document.createElement('div');
+    front.classList.add('front');
 
-  //create back of card
-  const back = document.createElement('div');
-  back.classList.add('back');
-  back.style.backgroundImage = `url(${card.img})`;
+    //create back of card
+    const back = document.createElement('div');
+    back.classList.add('back');
+    back.style.backgroundImage = `url(${card.img})`;
 
-  grid.appendChild(item);
-  item.appendChild(front);
-  item.appendChild(back);
-});
+    grid.appendChild(item);
+    item.appendChild(front);
+    item.appendChild(back);
+  });
+}
+
+
+const resetGame = () => {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+
+  createGrid();
+
+  message.innerHTML = 'Find the matching pairs';
+}
+
+
+//Reset guess count after 2
+const resetGuesses = () => {
+  firstGuess = '';
+  secondGuess = '';
+  count = 0;
+
+  var selected = document.querySelectorAll('.selected');
+  selected.forEach(card => {
+    card.classList.remove('selected');
+  });
+}
+
+const gameFinished = () => {
+  countMatch = 0;
+  const reset = document.createElement('button');
+  reset.setAttribute('class', 'reset');
+  reset.innerHTML = 'Play Again';
+  message.innerHTML = '';
+
+  message.appendChild(reset);
+  reset.addEventListener('click', function() {
+    resetGame();
+  });
+}
 
 const match = () => {
   var selected = document.querySelectorAll('.selected');
@@ -86,6 +125,13 @@ const match = () => {
     gameFinished();
   }
 };
+
+
+// Add event listener on load
+document.addEventListener('DOMContentLoaded', function() {
+  createGrid();
+});
+
 
 // Add event listener to grid
 grid.addEventListener('click', function(event) {
@@ -120,37 +166,3 @@ grid.addEventListener('click', function(event) {
     previousTarget = clicked;
   }
 });
-
-const gameReset = () => {
-  message.innerHTML = 'Find the matching pairs';
-  var matched = document.querySelectorAll('.match');
-  matched.forEach(card => {
-    card.classList.remove('match');
-  });
-}
-
-
-//Reset guess count after 2
-const resetGuesses = () => {
-  firstGuess = '';
-  secondGuess = '';
-  count = 0;
-
-  var selected = document.querySelectorAll('.selected');
-  selected.forEach(card => {
-    card.classList.remove('selected');
-  });
-}
-
-const gameFinished = () => {
-  countMatch = 0;
-  const reset = document.createElement('button');
-  reset.setAttribute('class', 'reset');
-  reset.innerHTML = 'Play Again';
-  message.innerHTML = '';
-
-  message.appendChild(reset);
-  reset.addEventListener('click', function() {
-    gameReset();
-  });
-}
