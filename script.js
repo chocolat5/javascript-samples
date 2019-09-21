@@ -1,27 +1,27 @@
 const cardsArray = [
   {
     name: 'monster01',
-    img: 'images/monster-01.svg',
+    img: 'https://twotree.xsrv.jp/img/tutorial/monster-01.svg',
   },
   {
     name: 'monster02',
-    img: 'images/monster-02.svg',
+    img: 'https://twotree.xsrv.jp/img/tutorial/monster-02.svg',
   },
   {
     name: 'monster03',
-    img: 'images/monster-03.svg',
+    img: 'https://twotree.xsrv.jp/img/tutorial/monster-03.svg',
   },
   {
     name: 'monster04',
-    img: 'images/monster-04.svg',
+    img: 'https://twotree.xsrv.jp/img/tutorial/monster-04.svg',
   },
   {
     name: 'monster05',
-    img: 'images/monster-05.svg',
+    img: 'https://twotree.xsrv.jp/img/tutorial/monster-05.svg',
   },
   {
     name: 'monster06',
-    img: 'images/monster-06.svg',
+    img: 'https://twotree.xsrv.jp/img/tutorial/monster-06.svg',
   },
 ];
 
