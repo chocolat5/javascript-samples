@@ -349,11 +349,3 @@ body {
     margin: 0 0 0 2rem;
   }
 }
-
-@media only screen and (min-width: 900px) {
-  .grid {
-    max-width: 880px;
-  }
-}
-
-/*# sourceMappingURL=style.css.map*/
