@@ -1,32 +1,41 @@
 const cardsArray = [
   {
-    name: 'monster01',
-    img: 'https://twotree.xsrv.jp/img/tutorial/monster-01.svg',
+    name: 'card01',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Chucky.svg',
   },
   {
-    name: 'monster02',
-    img: 'https://twotree.xsrv.jp/img/tutorial/monster-02.svg',
+    name: 'card02',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Dracula.svg',
   },
   {
-    name: 'monster03',
-    img: 'https://twotree.xsrv.jp/img/tutorial/monster-03.svg',
+    name: 'card03',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Frankenstein.svg',
   },
   {
-    name: 'monster04',
-    img: 'https://twotree.xsrv.jp/img/tutorial/monster-04.svg',
+    name: 'card04',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Friday13.svg',
   },
   {
-    name: 'monster05',
-    img: 'https://twotree.xsrv.jp/img/tutorial/monster-05.svg',
+    name: 'card05',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Ghostface.svg',
   },
   {
-    name: 'monster06',
-    img: 'https://twotree.xsrv.jp/img/tutorial/monster-06.svg',
+    name: 'card06',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Marshmallow.svg',
+  },
+  {
+    name: 'card07',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Pennywise.svg',
+  },
+  {
+    name: 'card08',
+    img: 'https://twotree.xsrv.jp/img/tutorial/Poltergeist.svg',
   },
 ];
 
 // Grab the div with an id of root
 const game = document.getElementById('game');
+const header = document.getElementById('header');
 const message = document.getElementById('message');
 
 //Only allow two cards to be selected at a time
@@ -41,6 +50,14 @@ let previousTarget = null;
 
 //Add delay
 let delay = 800;
+
+//reset button
+const reset = document.createElement('button');
+reset.setAttribute('class', 'reset');
+const resetIcon = document.createElement('i');
+resetIcon.setAttribute('class', 'fas fa-redo');
+reset.appendChild(resetIcon);
+header.appendChild(reset);
 
 // Create a section with a class of grid
 const grid = document.createElement('section');
@@ -82,9 +99,7 @@ const resetGame = () => {
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
   }
-
   createGrid();
-
   message.innerHTML = 'Find the matching pairs';
 }
 
@@ -103,16 +118,12 @@ const resetGuesses = () => {
 
 const gameFinished = () => {
   countMatch = 0;
-  const reset = document.createElement('button');
-  reset.setAttribute('class', 'reset');
-  reset.innerHTML = 'Play Again';
-  message.innerHTML = '';
-
-  message.appendChild(reset);
-  reset.addEventListener('click', function() {
-    resetGame();
-  });
+  message.innerHTML = 'Congratulations!';
 }
+
+reset.addEventListener('click', function() {
+  resetGame();
+});
 
 const match = () => {
   var selected = document.querySelectorAll('.selected');

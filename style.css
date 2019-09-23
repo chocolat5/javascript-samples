@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap');
+
 /*
 * Reset
 * ================================== */
@@ -219,13 +222,17 @@ body {
   padding: 60px 5% 40px;
   color: #444;
   background: #f3f3f3;
-  font-family: 'Noto Sans JP', '游ゴシック Medium', 'Yu Gothic Medium', YuGothic, '游ゴシック体', '游ゴシック', "Hiragino Kaku Gothic ProN", 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+  font-family: 'Lexend Exa', '游ゴシック Medium', 'Yu Gothic Medium', YuGothic, '游ゴシック体', '游ゴシック', "Hiragino Kaku Gothic ProN", 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
   -webkit-font-feature-settings: 'palt' 1;
   font-feature-settings: 'palt' 1;
 }
 
+.header {
+  text-align: center;
+}
+
 .grid {
-  max-width: 300px;
+  max-width: 320px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -246,8 +253,8 @@ body {
 .card,
 .front,
 .back {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
@@ -267,14 +274,15 @@ body {
 }
 
 .front {
-  border: 5px solid #ccc;
+  background: #1E3746;
   overflow: hidden;
 }
 
 .back {
   -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  background-size: 80%;
+  transform: rotateY(180deg);
+  background-color: #64D7D7;
+  background-size: 60%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -304,12 +312,11 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: none;
+  background: none;
   display: block;
+  color: #444;
   margin: 1rem auto 0;
-  padding: .4em 1.5em;
-  color: #fff;
-  background: #444;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   border-radius: 2em;
   letter-spacing: .05em;
   cursor: pointer;
@@ -319,7 +326,7 @@ body {
 
 @media only screen and (min-width: 600px) {
   .grid {
-    max-width: 660px;
+    max-width: 400px;
   }
 
   .card {
@@ -329,8 +336,8 @@ body {
   .card,
   .front,
   .back {
-    height: 200px;
-    width: 200px;
+    height: 80px;
+    width: 80px;
   }
 
   .message {
