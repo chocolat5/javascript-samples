@@ -12,14 +12,9 @@ The changes are as follows
 * When all cards matched, create "Play Again" button. Click this button to reset the game (remove class "match", reset count numbers etc)
 
 Images from [IconStore](https://iconstore.co)
-Use "[Monster Icons](https://iconstore.co/icons/monster-icons/)"
+Use "[Horror Movie Icon Pack](https://iconstore.co/icons/horror-movie-icon-pack/)"
 
 ## References
 
 [How to Create a Memory Game (ala Super Mario 3) with Plain JavaScript](https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/)  
 [@taniarascia](https://github.com/taniarascia)
-
-
-## License
-
-MIT
