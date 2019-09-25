@@ -108,6 +108,7 @@ const resetGame = () => {
 const resetGuesses = () => {
   firstGuess = '';
   secondGuess = '';
+  previousTarget = '';
   count = 0;
 
   var selected = document.querySelectorAll('.selected');
