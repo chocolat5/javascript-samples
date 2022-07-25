@@ -40,7 +40,7 @@ const createGrid = () => {
     item.dataset.name = card.name;
 
     const itemLink = document.createElement('a');
-    itemLink.setAttribute('href', card.url);
+    itemLink.setAttribute('href', `/javascript-samples${card.url}`);
     itemLink.style.cssText = `
       background-image:
         radial-gradient(at 0% 0%, ${getColor1()}, transparent),
