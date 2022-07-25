@@ -275,6 +275,11 @@ body {
   font-feature-settings: "palt" 1;
 }
 
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .page_ttl {
   margin-bottom: 80px;
   font-size: 2.4rem;
@@ -284,7 +289,6 @@ body {
 }
 
 .list {
-  max-width: 1200px;
   margin: -24px;
 }
 .list .item {

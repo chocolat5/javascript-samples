@@ -15,7 +15,6 @@ const sampleArray = [
 
 const contents = document.getElementById('main');
 
-// Create a section with a class of grid
 const cardList = document.createElement('ul');
 cardList.setAttribute('class', 'list');
 
