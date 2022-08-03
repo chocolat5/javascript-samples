@@ -13,7 +13,7 @@ const sampleArray = [
   },
 ]
 
-const contents = document.getElementById('main');
+const contents = document.getElementById('list');
 
 const cardList = document.createElement('ul');
 cardList.setAttribute('class', 'list');

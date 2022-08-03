@@ -226,6 +226,9 @@ body {
 
 .wrapper {
   max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -253,10 +256,6 @@ body {
       letter-spacing: .05em;
       text-decoration: none;
       text-align: center;
-
-      &:hover {
-
-      }
     }
   }
 
@@ -266,6 +265,24 @@ body {
 
     .item {
       width: 33.333%;
+    }
+  }
+}
+
+
+.footer {
+  margin-top: auto;
+  padding: 16px 0;
+  text-align: center;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+
+    img {
+      margin-left: 8px;
     }
   }
 }
